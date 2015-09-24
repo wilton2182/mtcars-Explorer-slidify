@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mtcars Explorer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mtcars Explorer">
+  <meta name="author" content="Don Wilton">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>mtcars Explorer</h1>
+    <h2>Shiny App for Developing Data Products project</h2>
+    <p>Don Wilton<br/>Developing Data Products project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>mtcars Explorer Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Purpose</h3>
+
+<ul>
+<li>mtcars Explorer is an interactive Shiny app<br></li>
+<li>for studying the <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html">mtcars dataset</a><br></li>
+<li>enables exploration of individual variables for predicting mpg</li>
+</ul>
+
+<h3>Obtaining the app</h3>
+
+<ul>
+<li>The mtcars Explorer is deployed on <a href="https://wilton2182.shinyapps.io/DevelopingDataProducts-ShinyApp">shinyapps.io</a>.<br></li>
+<li>The source code is available on <a href="https://github.com/wilton2182/DevelopingDataProducts-ShinyApp">github</a>.<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Shiny App Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em>Control</em> - The sidebar panel provides 3 controls that enable:</p>
+
+<ul>
+<li>Selection of one predictor variable,<br></li>
+<li>Selection of one data transformation for the predictor variable,<br></li>
+<li>Optional plotting of prediction and confidence interval lines.<br></li>
+</ul>
+
+<p><em>Tabs</em> - The main window has tabs with output and help:</p>
+
+<ul>
+<li>Plot - scatterplot with regression line and intervals</li>
+<li>lm() Summary - provides linear regression model details</li>
+<li>Residual Analysis Plots - aid to finding data or model problems</li>
+<li>Help - general help on app usage</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Processing</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Linear regression model uses predictor and transformation,<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html">lm()</a>
+formula is of general form mpg ~ transform(predictor),<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/predict.lm.html">predict.lm()</a>
+calculates prediction and confidence intervals,<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html">plot()</a> 
+generates a scatterplot of mpg vs. transformed predictor,</li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/abline.html">abline()</a>
+adds the regression line for the lm() model,<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/matplot.html">matlines()</a>
+adds prediction and confidence interval lines,<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/summary.lm.html">summary.lm()</a>
+generates output on the lm() summary tab,<br></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/plot.lm.html">plot.lm()</a>
+generates plots on the Residual Analysis Plots tab</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>mtcars Plot Generated With R Code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The plot below is generated with R code in this presentation as an example of
+a plot displayed in the mtcars Explorer.</p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='mtcars Explorer Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Shiny App Overview'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Processing'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='mtcars Plot Generated With R Code'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
